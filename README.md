@@ -70,7 +70,9 @@ Tokens are stored in the **Keychain**; plain settings live in `UserDefaults`. Fo
 
 ## Screenshots
 
-_Coming soon._
+| Monitors | Monitors (expanded) | Metrics | HomePage |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/monitors.png" width="200"> | <img src="docs/screenshots/monitors-expanded.png" width="200"> | <img src="docs/screenshots/metrics.png" width="200"> | <img src="docs/screenshots/homepage.png" width="200"> |
 
 ## License
 

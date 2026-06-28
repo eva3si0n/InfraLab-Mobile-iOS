@@ -2,10 +2,14 @@
   <img src="docs/screenshots/app-icon.png" width="120" alt="InfraLab icon">
 </p>
 
-<h1 align="center">InfraLab Mobile</h1>
+<h1 align="center">InfraLab Mobile (iOS)</h1>
 
 <p align="center">
   A native iOS dashboard for your home-lab / self-hosted stack — Uptime Kuma, Grafana and a Homepage portal in one app.
+</p>
+
+<p align="center">
+  📱 Android version: <a href="https://github.com/eva3si0n/InfraLab-Mobile-Android">InfraLab-Mobile-Android</a>
 </p>
 
 <p align="center"><a href="#по-русски">Русская версия ниже ↓</a></p>
@@ -82,7 +86,7 @@ Tokens are stored in the **Keychain**; plain settings live in `UserDefaults`. Fo
 
 ## По-русски
 
-**InfraLab Mobile** — нативный iOS-дашборд для домашней лаборатории / self-hosted стека: **Uptime Kuma**, **Grafana** и портал **Homepage** в одном приложении.
+**InfraLab Mobile (iOS)** — нативный iOS-дашборд для домашней лаборатории / self-hosted стека: **Uptime Kuma**, **Grafana** и портал **Homepage** в одном приложении. Android-версия: [InfraLab-Mobile-Android](https://github.com/eva3si0n/InfraLab-Mobile-Android).
 
 - **Monitors** — статус-страница **Uptime Kuma** нативно: узлы — сворачиваемые группы со сводной heartbeat-шкалой; тап разворачивает все проверки (ping / port / DNS / push…), у каждой своя Kuma-style шкала, задержка и аптайм за 24 ч.
 - **Metrics** — список дашбордов **Grafana**; открываешь — и все панели рисуются **нативно** (Swift Charts для time series + stat / gauge / bar-gauge / table) прямо по PromQL из дашборда. Без скриншотов и встроенного веба.

@@ -196,8 +196,11 @@ struct CascadeView: View {
                 let ds = durQ.first { $0.labels["host"] == cfg.host }?.value ?? 0
                 var rm: [String: Double] = [:]
                 for r in rtt where r.labels["host"] == cfg.host { if let l = r.labels["leg"] { rm[l] = r.value } }
-                let grp = appState.monitors.filter { $0.groupName == cfg.group }
-                let healthy = !grp.isEmpty && grp.allSatisfy { $0.isUp }
+                // Healthy = node reachability (Ping + SSH). Feature/cascade checks (FI handshake,
+                // Geo Routing, services) are shown separately and don't gate node health — FI is
+                // cold-standby, so its dead-man monitors are expected down while on STO/AMS.
+                let reach = appState.monitors.filter { $0.groupName == cfg.group && ($0.name == "Ping" || $0.name == "SSH") }
+                let healthy = !reach.isEmpty && reach.allSatisfy { $0.isUp }
                 let casc = appState.monitors.first { $0.groupName == "VPN Cascade" && $0.name.contains(cfg.match) }
                 return Seg(host: cfg.host, title: cfg.title, activeLeg: al, activeSeconds: ds, rtt: rm,
                            txBps: txbps.first { $0.labels["host"] == cfg.host }?.value,
